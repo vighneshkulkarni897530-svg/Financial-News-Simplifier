@@ -1,0 +1,22 @@
+{
+  "name": "finnews-ai",
+  "version": "1.0.0",
+  "description": "FinNews AI — Financial News Simplification Platform",
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && uvicorn app.main:app --reload --port 8000",
+    "dev:frontend": "cd frontend && python -m http.server 5500",
+    "start": "npm run dev",
+    "test": "cd backend && pytest"
+  },
+  "keywords": [
+    "fintech",
+    "fastapi",
+    "groq",
+    "llama3",
+    "newsapi"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

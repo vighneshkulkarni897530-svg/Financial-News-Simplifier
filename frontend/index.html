@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinNews AI — Financial News Simplifier</title>
+  <meta name="description" content="AI-powered financial news simplification platform. Understand complex market developments, financial jargon, and economic news with LLaMA 3.3 70B AI.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%220%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="mainHeader">
+    <div class="header-container">
+      <a href="#" class="brand-logo" aria-label="FinNews AI Homepage">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FinNews<span class="gradient-text">.AI</span></span>
+          <span class="brand-subtitle">Financial News Simplifier</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#dashboard" class="nav-link">Latest News</a></li>
+          <li><a href="#howItWorks" class="nav-link">How It Works</a></li>
+          <li><a href="#glossary" class="nav-link">Glossary</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Health Status Pill -->
+        <div class="health-badge" id="healthBadge" title="Checking backend health...">
+          <span class="status-dot pulsing"></span>
+          <span class="status-text" id="healthStatusText">Checking AI...</span>
+        </div>
+
+        <!-- Dark/Light Mode Toggle -->
+        <button class="icon-btn theme-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="icon-btn mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open mobile navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#dashboard" class="mobile-nav-link">Latest News</a></li>
+        <li><a href="#howItWorks" class="mobile-nav-link">How It Works</a></li>
+        <li><a href="#glossary" class="mobile-nav-link">Glossary</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-bg"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="sparkle">✨</span> Powered by Groq LLaMA 3.3 70B
+          </div>
+          <h1 class="hero-title">
+            Understand Financial News <br>
+            <span class="gradient-text">Without the Financial Jargon.</span>
+          </h1>
+          <p class="hero-subtitle">
+            FinNews AI transforms dense, complex market reports into crystal-clear, beginner-friendly insights in seconds. Preserving pure facts while decoding complicated Wall Street language.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroFetchBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Fetch & Simplify
+            </button>
+            <a href="#howItWorks" class="btn btn-secondary">
+              How It Works
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Flow Diagram Visual -->
+          <div class="pipeline-visual">
+            <div class="pipeline-step">
+              <span class="step-icon">📰</span>
+              <span class="step-title">Complex News</span>
+              <span class="step-desc">NewsAPI Live Feed</span>
+            </div>
+            <div class="pipeline-connector">
+              <span class="connector-line"></span>
+              <span class="connector-arrow">→</span>
+            </div>
+            <div class="pipeline-step active-ai">
+              <span class="step-icon">⚡</span>
+              <span class="step-title">Groq LLaMA 3.3</span>
+              <span class="step-desc">70B Reasoning</span>
+            </div>
+            <div class="pipeline-connector">
+              <span class="connector-line"></span>
+              <span class="connector-arrow">→</span>
+            </div>
+            <div class="pipeline-step">
+              <span class="step-icon">💡</span>
+              <span class="step-title">Simple Insight</span>
+              <span class="step-desc">Jargon-Free Clarity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Dashboard Section -->
+    <section class="dashboard-section" id="dashboard">
+      <div class="dashboard-container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Latest Financial News</h2>
+            <p class="section-subtitle">Real-time global market developments simplified with Generative AI.</p>
+          </div>
+
+          <!-- Action Controls: Fetch & Simplify All -->
+          <div class="section-actions">
+            <button class="btn btn-accent" id="fetchAndSimplifyAllBtn">
+              <span class="btn-sparkle">✨</span>
+              <span>Fetch & Simplify Top News</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter and Search Bar Controls -->
+        <div class="controls-card">
+          <div class="category-filters" role="tablist" aria-label="News Categories">
+            <button class="category-pill active" data-category="all" role="tab" aria-selected="true">
+              <span class="cat-icon">🌐</span> All
+            </button>
+            <button class="category-pill" data-category="markets" role="tab" aria-selected="false">
+              <span class="cat-icon">📊</span> Markets
+            </button>
+            <button class="category-pill" data-category="economy" role="tab" aria-selected="false">
+              <span class="cat-icon">🏦</span> Economy
+            </button>
+            <button class="category-pill" data-category="business" role="tab" aria-selected="false">
+              <span class="cat-icon">💼</span> Business
+            </button>
+            <button class="category-pill" data-category="technology" role="tab" aria-selected="false">
+              <span class="cat-icon">💻</span> Technology
+            </button>
+          </div>
+
+          <form class="search-form" id="searchForm" role="search">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="search" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Search financial news (e.g., Inflation, Tesla, Fed, Crypto)..." 
+                aria-label="Search financial news"
+                autocomplete="off"
+              >
+              <button type="button" class="clear-search-btn" id="clearSearchBtn" aria-label="Clear search query" style="display: none;">
+                &times;
+              </button>
+            </div>
+            <button type="submit" class="btn btn-primary search-btn">Search</button>
+          </form>
+        </div>
+
+        <!-- Active Query Info Bar -->
+        <div class="results-info-bar" id="resultsInfoBar">
+          <span class="results-count" id="resultsCountText">Loading financial news...</span>
+          <div class="view-options">
+            <button class="btn-text" id="refreshFeedBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Multi-Stage Loading Skeleton Indicator -->
+        <div class="loading-state-container" id="loadingState" style="display: none;">
+          <div class="loading-card">
+            <div class="spinner-ring"></div>
+            <div class="loading-stages">
+              <div class="stage-item active" id="stage1">
+                <span class="stage-dot"></span>
+                <span class="stage-label">Fetching latest financial news from NewsAPI...</span>
+              </div>
+              <div class="stage-item" id="stage2">
+                <span class="stage-dot"></span>
+                <span class="stage-label">Analyzing articles with Groq LLaMA 3.3 70B...</span>
+              </div>
+              <div class="stage-item" id="stage3">
+                <span class="stage-dot"></span>
+                <span class="stage-label">Preparing simplified plain-English insights...</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skeleton Grid -->
+          <div class="news-grid skeleton-grid">
+            <div class="skeleton-card">
+              <div class="skeleton-img"></div>
+              <div class="skeleton-body">
+                <div class="skeleton-line w-40"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="skeleton-line w-100"></div>
+                <div class="skeleton-line w-60"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton-img"></div>
+              <div class="skeleton-body">
+                <div class="skeleton-line w-40"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="skeleton-line w-100"></div>
+                <div class="skeleton-line w-60"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton-img"></div>
+              <div class="skeleton-body">
+                <div class="skeleton-line w-40"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="skeleton-line w-100"></div>
+                <div class="skeleton-line w-60"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State Card -->
+        <div class="error-state-card" id="errorState" style="display: none;">
+          <div class="error-icon-wrapper">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="error-badge" id="errorCodeBadge">ERROR</div>
+          <h3 class="error-title" id="errorTitle">Unable to Load News</h3>
+          <p class="error-message" id="errorMessage">We encountered an issue retrieving financial news.</p>
+          <div class="error-actions" style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+            <button class="btn btn-primary" id="retryBtn">Try Again</button>
+            <button class="btn btn-secondary" id="loadDemoBtn">✨ Load Demo Financial News</button>
+          </div>
+        </div>
+
+        <!-- Empty State Card -->
+        <div class="empty-state-card" id="emptyState" style="display: none;">
+          <div class="empty-icon">🔍</div>
+          <h3>No Articles Found</h3>
+          <p>We couldn't find any financial news matching your current query. Try different keywords or clear your filters.</p>
+          <button class="btn btn-secondary" id="resetFiltersBtn">Reset Filters</button>
+        </div>
+
+        <!-- News Cards Grid Container -->
+        <div class="news-grid" id="newsGrid">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="info-section" id="howItWorks">
+      <div class="info-container">
+        <div class="section-center-header">
+          <span class="sub-badge">AI Architecture</span>
+          <h2 class="section-title">How FinNews AI Works</h2>
+          <p class="section-subtitle">A transparent, reliable pipeline engineered to eliminate financial complexity without distorting facts.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-num">01</div>
+            <div class="feature-icon">📡</div>
+            <h3 class="feature-title">Real-Time News Ingestion</h3>
+            <p class="feature-desc">Connects asynchronously to NewsAPI to fetch verified global financial reports, filtering out duplicates and noise.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-num">02</div>
+            <div class="feature-icon">🧹</div>
+            <h3 class="feature-title">Sanitization & Guardrails</h3>
+            <p class="feature-desc">Cleans HTML and isolates untrusted third-party content within strict safety boundaries to prevent prompt injections.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-num">03</div>
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Groq LLaMA 3.3 70B</h3>
+            <p class="feature-desc">Ultra-fast inference transforms complicated financial jargon into structured, easy-to-understand bullet points and terms.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-num">04</div>
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Objective Context</h3>
+            <p class="feature-desc">Explains why the news matters to everyday individuals while adhering to strict neutrality and zero investment advisory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Financial Terms Glossary Section -->
+    <section class="info-section alternate-bg" id="glossary">
+      <div class="info-container">
+        <div class="section-center-header">
+          <span class="sub-badge">Quick Reference</span>
+          <h2 class="section-title">Common Financial Terms Simplified</h2>
+          <p class="section-subtitle">Click any financial term below to view its plain-English definition.</p>
+        </div>
+
+        <div class="glossary-grid" id="glossaryGrid">
+          <div class="glossary-card">
+            <div class="glossary-term">Inflation</div>
+            <div class="glossary-def">The gradual increase in the general prices of goods and services over time, meaning your money buys fewer goods than before.</div>
+          </div>
+          <div class="glossary-card">
+            <div class="glossary-term">Interest Rate</div>
+            <div class="glossary-def">The cost of borrowing money, set by lenders or central banks. Higher rates make loans and credit cards more expensive.</div>
+          </div>
+          <div class="glossary-card">
+            <div class="glossary-term">Gross Domestic Product (GDP)</div>
+            <div class="glossary-def">The total market value of all finished goods and services produced within a country in a specific period, measuring economic health.</div>
+          </div>
+          <div class="glossary-card">
+            <div class="glossary-term">Federal Reserve (The Fed)</div>
+            <div class="glossary-def">The central banking system of the United States, responsible for regulating monetary policy, controlling inflation, and stabilizing financial markets.</div>
+          </div>
+          <div class="glossary-card">
+            <div class="glossary-term">Treasury Yield</div>
+            <div class="glossary-def">The interest rate that the government pays to investors who lend it money by purchasing government bonds.</div>
+          </div>
+          <div class="glossary-card">
+            <div class="glossary-term">Earnings Per Share (EPS)</div>
+            <div class="glossary-def">A company's net profit divided by the number of outstanding shares, showing how much profit is allocated to each share of stock.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Disclaimer Section -->
+    <section class="info-section" id="about">
+      <div class="info-container">
+        <div class="disclaimer-box">
+          <div class="disclaimer-header">
+            <span class="disclaimer-icon">⚖️</span>
+            <h3>Important Information Simplification Principle</h3>
+          </div>
+          <p class="disclaimer-text">
+            <strong>FinNews AI is an information simplification and educational platform, not an investment advisory system.</strong>
+            The AI does not guarantee market movements, provide personalized investment advice, or recommend buying or selling any security. All summaries and market relevance explanations represent neutral, automated AI interpretations of third-party public reporting. Always consult certified financial advisors for personal investment decisions.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo-icon small">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <span class="footer-brand-title">FinNews AI</span>
+      </div>
+      <p class="footer-tagline">Empowering retail investors, students, and readers with accessible financial intelligence.</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#dashboard">News</a>
+        <a href="#howItWorks">Architecture</a>
+        <a href="#glossary">Glossary</a>
+        <a href="http://localhost:8000/docs" target="_blank" rel="noopener">API Docs</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 FinNews AI. Built with FastAPI, Groq LLaMA 3.3 70B & NewsAPI.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
