@@ -3,8 +3,13 @@
  * Modular vanilla JavaScript ES6+ architecture
  */
 
-// Configuration: unified API Base URL
-const API_BASE_URL = window.APP_CONFIG?.API_BASE_URL || "http://localhost:8000";
+// Configuration: unified API Base URL (auto-detects local dev vs production Vercel backend)
+const DEFAULT_REMOTE_BACKEND = "https://financial-news-simplifier-9dmi2p6n4-vb-developer.vercel.app";
+const API_BASE_URL =
+  window.APP_CONFIG?.API_BASE_URL ||
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:8000"
+    : DEFAULT_REMOTE_BACKEND);
 
 // Global App State
 const state = {
